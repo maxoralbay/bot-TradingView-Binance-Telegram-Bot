@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+    binance-alert-bot:
+        build:
+            context: app
+        container_name: binance-alert-bot
+        environment:
+            - FLASK_APP=app.py
+            - FLASK_ENV=development
+        volumes:
+            - ./app:/app
+        command: /usr/local/bin/gunicorn --reload -w 8 -b 0.0.0.0:5000 app:app
+        restart: always
+        #command: tail -f /dev/null
+        ports:
+            - "8081:5000"

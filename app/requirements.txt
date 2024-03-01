@@ -1,0 +1,8 @@
+flask
+gunicorn
+python-binance
+binance-futures-connector
+pyTelegramBotAPI
+python-telegram-bot==13.12
+discord-webhook==0.14.0
+tweepy==3.10.0
